@@ -38,6 +38,10 @@ public class Hacker : MonoBehaviour
         {
             RunMainMenu(input);
         }
+       else if (currentScreen == Screen.Password)
+        {
+            CheckPassword(input);
+        }
     }
 
     void RunMainMenu(string input)
