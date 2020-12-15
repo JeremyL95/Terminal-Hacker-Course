@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Hacker : MonoBehaviour
 {
-    int level;
-    
+    //Game State
+    int level;   
     enum Screen { MainMenu, Password, Win };
     Screen currentScreen;
+    string password;
 
     void Start()
     {
@@ -44,11 +45,13 @@ public class Hacker : MonoBehaviour
         if (input == "1")
         {
             level = 1;
+            password = "Omg";
             StartGame();
         }
         else if (input == "2")
         {
             level = 2;
+            password = "Hello";
             StartGame();
         }
         else
@@ -62,5 +65,17 @@ public class Hacker : MonoBehaviour
         currentScreen = Screen.Password;
         Terminal.WriteLine("You have chosen level" + " " + level);
         Terminal.WriteLine("Please enter you password:");
+    }
+
+    void CheckPassword(string input)
+    {
+        if(input == password)
+        {
+            Terminal.WriteLine("Access Granted");
+        }
+        else
+        {
+            Terminal.WriteLine("Opps, Try Again");
+        }
     }
 }
