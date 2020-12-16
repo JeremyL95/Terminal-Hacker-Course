@@ -17,6 +17,7 @@ public class Hacker : MonoBehaviour
     void Start()
     {
         ShowMainMenu();
+        print("started");
     }
 
     void ShowMainMenu()
